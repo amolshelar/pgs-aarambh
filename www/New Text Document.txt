@@ -1,0 +1,10 @@
+<div class="panel-pane pane-block pane-menu-menu-target-group jquery-once-2-processed ui-accordion ui-widget ui-helper-reset is-accordion" role="tablist">
+                  <h2 class="pane-title ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-accordion-header-active ui-state-active ui-corner-top" role="tab" id="ui-accordion-1-header-0" aria-controls="ui-accordion-1-panel-0" aria-selected="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>Zielgruppe</h2>
+                <ul class="menu ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" id="ui-accordion-1-panel-0" aria-labelledby="ui-accordion-1-header-0" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: block;"><li class="first leaf"><a href="/de/zielgruppe/studieninteressierte" class="icon-study-interest">Studien&shy;interes&shy;sierte</a></li>
+<li class="leaf"><a href="/de/zielgruppe/studierende" class="icon-students">Studierende</a></li>
+<li class="leaf"><a href="/de/zielgruppe/international-students" class="icon-international-students">Inter&shy;na&shy;tional Students</a></li>
+<li class="leaf"><a href="/de/zielgruppe/alumni" class="icon-alumni">Alumni</a></li>
+<li class="leaf"><a href="/de/zielgruppe/mitarbeiter" class="icon-employees">Mitarbeiter</a></li>
+<li class="leaf"><a href="/de/zielgruppe/unternehmen" class="icon-companies">Unternehmen</a></li>
+<li class="last leaf"><a href="/de/zielgruppe/presse" class="icon-press">Presse</a></li>
+</ul>          </div>
