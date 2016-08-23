@@ -4,37 +4,14 @@
 <title>PGS Aarambh</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <style>
 .centered {
 	position: fixed;
-	top: 40%;
+	top: 50%;
 	left: 50%;
-	margin-top: -40px;
-	margin-left: -100px;
+	margin-top: -150px;
+	margin-left: -150px;
 }
-.loader {
-  border: 6px solid #f3f3f3;
-  border-radius: 100%;
-  border-top: 9px solid #3498db;
-  width: 170px;
-  height: 170px;
-  -webkit-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite;
-}
-
-@-webkit-keyframes spin {
- 100% { -webkit-transform: rotate(360deg); }
-  0% { -webkit-transform: rotate(0deg); }
- 
-}
-
-@keyframes spin {
-100% { transform: rotate(-360deg); }
-  0% { transform: rotate(0deg); }
-  
-}
-
 </style>
 <script>
 	function submitForm() {
@@ -42,22 +19,10 @@
 	};
 	setTimeout(submitForm, 5000);//5*60*1000
 </script>
-<script>
-var myVar;
-function myFunction() {
-    myVar = setTimeout(showPage, 2500);
-}
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  $("#mylogo").fadeIn(2200);
-}
-</script>
 </head>
-<body onload="myFunction()">
+<body style="background-color: #0091da">
 	<form name="myform" action="home.html">
-		<div style="display:none;" id="mylogo">
-		<img src="img/logo.png" alt="Aarambh" class="centered"></div>
-		<div id="loader" class="loader centered"></div>
+		<img src="img/principal-logo.png" alt="Aarambh" class="centered" height="300 px" width="300 px">
 	</form>
 </body>
 </html>
