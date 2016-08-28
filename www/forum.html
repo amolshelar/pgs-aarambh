@@ -8,79 +8,204 @@
 <link rel="stylesheet" href="css\w3.css">
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<style type="text/css">
+.chat {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.chat li {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li:last-child {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: none;
+}
+
+.chat li.left .chat-body {
+	margin-left: 60px;
+}
+
+.chat li.right .chat-body {
+	margin-right: 60px;
+}
+
+.chat li .chat-body p {
+	margin: 0;
+	color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon {
+	margin-right: 5px;
+}
+
+.panel-body {
+	height: 225px;
+}
+
+.panel-body2 {
+	height: 185px;
+	margin: 15px;
+}
+
+.panel-body3 {
+	margin: 15px;
+}
+
+.panel-body4 {
+	margin: 15px;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	background-color: #555;
+}
+
+p a {
+	text-decoration: underline;
+}
+
+.twitter-typeahead {
+	display: block !important;
+}
+
+.tt-dataset-topics {
+	margin-left: 15px;
+}
+
+.help-buttons {
+	margin-top: 15px;
+}
+</style>
+<script>
+	$
+			.getScript(
+					'https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js',
+					function() {
+
+						var substringMatcher = function(strs) {
+							return function findMatches(q, cb) {
+								var matches, substringRegex;
+
+								// an array that will be populated with substring matches
+								matches = [];
+
+								// regex used to determine if a string contains the substring `q`
+								substrRegex = new RegExp(q, 'i');
+
+								// iterate through the pool of strings and for any string that
+								// contains the substring `q`, add it to the `matches` array
+								$.each(strs, function(i, str) {
+									if (substrRegex.test(str)) {
+										matches.push(str);
+									}
+								});
+
+								cb(matches);
+							};
+						};
+
+						var topics = [ 'Motivating a Team Member',
+								'Motivating After a Setback',
+								'Motivating and Creating a Sense of Urgency' ];
+
+						$('#typeahead').typeahead({
+							hint : false,
+							highlight : true,
+							minLength : 1
+						}, {
+							name : 'topics',
+							source : substringMatcher(topics)
+						});
+
+					});
+</script>
+<script>
+	$(function() {
+		$("#nav-bar").load("nav-bar.html");
+	});
+</script>
 </head>
 <body>
-	<header class="navbar-principal-primary">
-		<nav class="navbar-default">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<div style="margin-left: 10px;" class="logo-full-tier1 visible-xs visible-sm visible-md">
-						<a href="/" class="navbar-brand logo-full-white">Principal</a>
-					</div>
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-					</button>
-
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 0px;">
-					<div class="row">
-						<div class="col-lg-10">
-							<ul class="nav navbar-nav navbar-left">
-								<li class="logo-full-tier1 hidden-xs hidden-sm hidden-md"><a class="logo-full-white" href="/"></a></li>
-								<li><a href="about-pgs.html">About PGS</a></li>
-								<li><a href="about-principal.html">About Principal</a></li>
-								<li><a href="mobile-based-trainings.html">Mobile based trainings</a></li>
-								<li><a href="testimonials.html">Testimonials from employees</a></li>
-								<li><a href="image-gallery.html">Image gallery</a></li>
-								<li><a href="video-gallery.html">360 degree floor view</a></li>
-								<li><a href="fun-at-principal.html">Principal Advantage > Fun @ Principal</a></li>
-								<li><a href="we-care.html">Principal Advantage > We Care</a></li>
-								<li><a href="corporate-events.html">Principal Advantage > Corporate Event</a></li>
-								<li><a href="driven-by-technology.html">Principal Advantage > Driven by technology</a></li>
-								<li><a href="pgs-diaries.html">Principal Advantage > PGS Diaries</a></li>
-								<li><a href="accommodation.html">Accommodation</a></li>
-								<li><a href="message-from-management.html">Message from Management</a></li>
-								<li><a href="forum.html">Forum</a></li>
-								<li><a href="hr-contact.html">HR Contact</a></li>
-								<li><a href="faq.html">FAQ</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-2">
-							<ul class="nav navbar-nav navbar-right" style="display: block !important">
-								<li class="small"><a href="index.html">Home</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /.navbar-collapse -->
-			</div>
-			<!-- /.container-fluid -->
-		</nav>
-	</header>
+	<div id="nav-bar"></div>
 
 	<div class="w3-container w3-card-2 w3-white w3-round w3-margin">
-		<br> <img src="img/profile.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width: 60px"> <span class="w3-right w3-opacity">1 min</span>
 		<h4>Chat Forum</h4>
-		<br>
 		<hr class="w3-clear">
-		<p>Hey this is a disscussion forum</p>
-		<div class="w3-row-padding" style="margin: 0 -16px">
-			<div class="w3-half">
-				<img src="img/profile.jpg" style="width: 100%" class="w3-margin-bottom">
-			</div>
-			<div class="w3-half">
-				<img src="img/banner.jpg" style="width: 100%" class="w3-margin-bottom">
-			</div>
-		</div>
-		<button type="button" class="w3-btn w3-theme-d1 w3-margin-bottom">
-			<i class="fa fa-thumbs-up"></i>Like
-		</button>
-		<button type="button" class="w3-btn w3-theme-d2 w3-margin-bottom">
-			<i class="fa fa-comment"></i>Comment
-		</button>
-	</div>
+		<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+		<div class="container">
+			<div class="col-md-5">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<span class="glyphicon glyphicon-comment"></span>  Chat
+					</div>
+					<div class="panel-body">
+						<ul class="chat">
 
+							<li class="right clearfix"><span class="chat-img pull-right"> <img src="img/profile-rishi.jpg" alt="User Avatar" class="img-circle" width="50" height="50" />
+							</span>
+								<div class="chat-body clearfix">
+									<div class="header">
+										<small class=" text-muted"> </small> <strong class="pull-right primary-font">You</strong>
+									</div>
+									<p>I'm looking for a flat in magarpatta and I'm looking for room mate. Is anyboday intrested?</p>
+								</div></li>
+
+							<li class="left clearfix"><span class="chat-img pull-left"> <img src="img/profile-rachit.jpg" alt="User Avatar" class="img-circle" width="50" height="50" />
+							</span>
+								<div class="chat-body clearfix">
+									<div class="header">
+										<strong class="primary-font">Rachit</strong> <small class="pull-right text-muted"> </small>
+									</div>
+									<p>
+										Yes, I'm interested. Any idea what is current rent?
+									</p>
+								</div></li>
+
+							<li class="right clearfix"><span class="chat-img pull-right"> <img src="img/profile-prateeeksha.jpg" alt="User Avatar" class="img-circle" width="50" height="50" />
+							</span>
+								<div class="chat-body clearfix">
+									<div class="header">
+										<small class=" text-muted"> </small> <strong class="pull-right primary-font">Prateeeksha</strong>
+									</div>
+									<p>Okay, so here's what's been happening...</p>
+								</div></li>
+						</ul>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="panel-footer">
+						<div class="input-group">
+							<input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." /> <span class="input-group-btn">
+								<button class="btn btn-warning btn-sm" id="btn-chat">Send</button>
+							</span>
+						</div>
+						<!--/col-md-6 -->
+					</div>
+					<!--/container-->
+
+				</div>
+				<br>
+				<br>
 </body>
 </html>
